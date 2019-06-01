@@ -34,7 +34,7 @@ INSTALLED_APPS = [
     'mainApp',
     'loginsystem',
     'user',
-    'event',
+    'work',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

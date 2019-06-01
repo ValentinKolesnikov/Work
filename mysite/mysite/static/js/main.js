@@ -1,6 +1,5 @@
 
 function like(btn){
-    console.log('fds');
     btn.removeAttribute('onclick');
     var formData = new FormData();
     var parent = btn.parentNode;
@@ -18,7 +17,7 @@ function like(btn){
       }
       parent.lastChild.innerHTML = " " + mark;
       var xhr = new XMLHttpRequest();
-      xhr.open("POST", "/event/like");
+      xhr.open("POST", "/work/like");
       xhr.send(formData);
     }
     setTimeout(function () {

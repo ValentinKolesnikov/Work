@@ -10,7 +10,7 @@
         <div class="content">
             <h1>Регистрация на конкурс‎</h1>
             <p class="change-competition">{{top.name}}</p>
-            <a class="button" href="event/{{top.id}}">Принять участие</a>
+            <a class="button" href="work/{{top.id}}">Принять участие</a>
         </div>
     </div>
 </div>
@@ -19,7 +19,7 @@
         <div class="news-left">
             {% for new in news %}
             <div class="new">
-                <h4><a href="event/{{new.id}}">{{new.name}}</a></h4>
+                <h4><a href="work/{{new.id}}">{{new.name}}</a></h4>
                 <p>{{new.text}}</p>
             </div>
             {% endfor %}
@@ -28,7 +28,7 @@
             <span>Обратите внимание</span>
             <ul>
                 {% for b in bar %}
-                <li><a href="event/{{b.id}}">{{b.name}}</a></li>
+                <li><a href="work/{{b.id}}">{{b.name}}</a></li>
                 {% endfor %}
             </ul>
         </nav>

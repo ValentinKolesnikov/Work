@@ -21,14 +21,16 @@
 				<nav>
 					<ul>
 						<li>
-							<a href="/news">Новости</a>
+							<a href="/activity">Произведения</a>
 						</li>
 						<li>
-							<a href="/activity">Мероприятия</a>
+							<a href="/work/create">Опубликовать</a>
 						</li>
+						{% if user.is_superuser %}
 						<li>
-							<a href="/top_users">ТОП пользователей</a>
+							<a href="/admin">Админка</a>
 						</li>
+						{% endif %}
 					{% block auth %}
 						{% include "mainApp/includes/login_panel.html" %}
 					{% endblock %}
@@ -50,7 +52,7 @@
 				</div>
 				<div class="links">
 					<a href="#">Регистрация</a>
-					<a href="#">Пользовательское сголашение</a>
+					<a href="#">Пользовательское соглашение</a>
 					<a href="#">Реквизиты</a>
 				</div>
 			</div>

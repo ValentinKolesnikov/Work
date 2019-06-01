@@ -1,0 +1,18 @@
+{% extends "mainApp/wrapper.html" %}
+
+{% block title %}
+Новое произведение
+{% endblock %}
+
+{% block content %}
+<div class="outer-block events-block">
+		<form action="/work/create/" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        {% if not user.is_authenticated %}
+        <p><label for="id_fio">ФИО:</label> <input type="text" name="fio" maxlength="50" required="" id="id_fio"></p>
+        {% endif %}
+        <input class="register__btn btn" type="submit" value="Создать">
+		</form>
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "mainApp/wrapper.html" %}
+
+{% block title %}
+Произведение
+{% endblock %}
+
+{% block content %}
+{% if error %}
+<p>Такого мероприятия нет</p>
+{% else %}
+<div class="outer-block events-block">
+    <div class="container">
+        <div class="event">
+            <h1>{{work.name}}</h1>
+            <img src="{{work.photo.url}}" alt="">
+            <p>{{work.text}}</p>
+            <div class="rest-card__rating">
+                    <p id="{{work.id}}"
+                      {% for like in likes %}{% if like.work.id == work.id %}class="like-added"
+                      {% endif %}{% endfor %}><i class="fas fa-heart" {% if user.is_staff %} onclick="like(this)"{% endif %}>***</i> <span class="mark">{{work.mark}}</span></p>
+                    </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}
