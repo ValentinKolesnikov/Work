@@ -1,0 +1,31 @@
+{% extends "mainApp/wrapper.html" %}
+
+{% block title %}
+{{userprofile.username}}
+{% endblock %}
+
+{% block content %}
+{% if error %}
+<p>Такого пользователя нет</p>
+{% else %}
+<div class="outer-block users-block">
+    <div class="container">
+        <div class="user">
+            <div class="photo">
+                <img src="{% if client.photo %}{{client.photo.url}}{% else %}/media/users/0.jpg{% endif %}" alt="user">
+            </div>
+            <div class="content">
+                <p><span>Фамилия: </span>{{userprofile.last_name}}<p>
+                <p><span>Имя: </span>{{userprofile.first_name}}</p>
+                <p><span>E-mail: </span><a href="email:email@email.by">email@email.by</a></p>
+                <p><span>Телефон: </span>{{client.phone}}</p>
+                <p><span>Адрес: </span>{{client.address}}</p>
+                {% if user.id == userprofile.id %}
+                <a href="/user/editor/">Редактировать профиль</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "mainApp/wrapper.html" %}
+
+{% block title %}
+Мероприятие
+{% endblock %}
+
+{% block content %}
+{% if error %}
+<p>Такого мероприятия нет</p>
+{% else %}
+<div class="outer-block events-block">
+    <div class="container">
+        <div class="event">
+            <h1>{{event.name}}</h1>
+            <img src="{{event.photo.url}}" alt="">
+            <p>{{event.text}}</p>
+
+            <div class="rest-card__rating">
+                    <p id="{{event.id}}"
+                      {% for like in likes %}{% if like.event.id == event.id %}class="like-added"
+                      {% endif %}{% endfor %}><i class="fas fa-heart" {% if user.is_staff %} onclick="like(this)"{% endif %}>***</i> <span class="mark">{{event.mark}}</span></p>
+                    </div>
+                <form action="/event/{{event.id}}" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <input class="button" type="submit" value="Принять участие">
+                    </form>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}
