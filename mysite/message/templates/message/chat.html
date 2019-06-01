@@ -1,0 +1,18 @@
+{% extends "mainApp/wrapper.html" %}
+
+{% block title %}
+Новое произведение
+{% endblock %}
+
+{% block content %}
+<div class="outer-block events-block">
+{% for message in messages %}
+<div>
+        {{message.user_from}}   {{message.date|date:"Y-m-d H:i:s"}}
+    </div>
+    <div>
+    {{message.text}}
+    </div>
+{% endfor %}
+</div>
+{% endblock %}

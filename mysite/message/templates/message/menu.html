@@ -1,0 +1,29 @@
+{% extends "mainApp/wrapper.html" %}
+
+{% block title %}
+Произведение
+{% endblock %}
+
+{% block content %}
+<div class="outer-block events-block">
+{% for chat in chats %}
+<div>
+    {% with last_message=chat.message_set.last %}
+    <div>
+        <!-- переделать  -->
+        {% for u in chat.members.all %}
+            {% if user != u %}  
+            <a href="/message/{{u.id}}">{{u}} </a>
+            {% endif %}
+        {% endfor %}
+        <!-- это -->
+        {{last_message.date|date:"Y-m-d H:i:s"}}
+    </div>
+    <div>
+    {{last_message.text}}
+    </div>
+    {% endwith %}
+</div>
+{% endfor %}
+</div>
+{% endblock %}
