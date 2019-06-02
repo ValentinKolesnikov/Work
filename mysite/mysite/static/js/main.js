@@ -25,3 +25,20 @@ function like(btn){
     }, 300)
   }
   
+  function newMessage(){
+
+    var formData = new FormData(document.forms.postmessage);
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", window.location.href);
+    xhr.send(formData);
+    var name = document.getElementById('user');
+    var messageBlock = document.getElementById('messages');
+    var input = document.getElementById('text');
+    if(input.value != ""){
+      messageBlock.innerHTML += `<div class="message">
+        <div >`+name.textContent+` только что</div>
+        <div>`+input.value+`</div>
+      </div>`;
+      input.value = "";
+    }
+  }

@@ -1,18 +1,26 @@
 {% extends "mainApp/wrapper.html" %}
 
 {% block title %}
-Новое произведение
+Чат
 {% endblock %}
 
 {% block content %}
 <div class="outer-block events-block">
-{% for message in messages %}
-<div>
-        {{message.user_from}}   {{message.date|date:"Y-m-d H:i:s"}}
+<div id="messages">
+    {% for message in messages %}
+    <div class="message">
+        <div>{{message.user_from}}   {{message.date|date:"Y-m-d H:i:s"}}</div>
+        <div>{{message.text}}</div>
     </div>
-    <div>
-    {{message.text}}
-    </div>
-{% endfor %}
+    {% endfor %}
+</div>
+<div class="send_message">
+    <form name="postmessage">
+        {% csrf_token %}
+        <textarea type="text" placeholder="Введите сообщение..." rows="5" name="text" id="text"
+          class="comments__input"></textarea>
+      </form>
+      <button class="btn" onclick="newMessage()">Отправить</button>
+</div>
 </div>
 {% endblock %}

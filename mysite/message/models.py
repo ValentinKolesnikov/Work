@@ -23,6 +23,11 @@ class Chat(models.Model):
             ret+= str(u)+' '
         return ret
 
+    def __lt__(self, other):
+         return self.message_set.last().date > other.message_set.last().date
+
+        
+
 class Message(models.Model):
     class Meta():
         db_table = 'Message'
@@ -34,4 +39,7 @@ class Message(models.Model):
 
     def __str__(self):
         return str(self.text)
+
+    def __lt__(self, other):
+         return self.date > other.date
 
