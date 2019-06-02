@@ -20,10 +20,16 @@ class CreateWork(forms.ModelForm):
         required=True,
     )
 
+    document = forms.FileField(
+        label='Ваша работа',
+        required=False,
+    )
+
     def __init__(self, *args, **kwargs):
         super(CreateWork, self).__init__(*args, **kwargs)
         self.fields['text'].label = 'Описание'
 
+
     class Meta:
         model = Work
-        fields = ('name', 'text', 'photo')
+        fields = ('name', 'text', 'photo', 'document')

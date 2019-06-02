@@ -14,11 +14,18 @@
             <h1>{{work.name}}</h1>
             <img src="{{work.photo.url}}" alt="">
             <p>{{work.text}}</p>
+            {% if work.extension == "video" %}
+            <video controls  name="media"><source src="{{work.document.url}}" type="video/webm"></video>
+            {% elif work.extension == "audio" %}
+            <audio controls src="{{work.document.url}}"></audio>
+            {% elif work.extension != "none"%}
+            <p><a href="{{work.document.url}}">Работа...</a></p>
+            {% endif %}
             <div class="rest-card__rating">
-                    <p id="{{work.id}}"
-                      {% for like in likes %}{% if like.work.id == work.id %}class="like-added"
-                      {% endif %}{% endfor %}><i class="fas fa-heart" {% if user.is_staff %} onclick="like(this)"{% endif %}>***</i> <span class="mark">{{work.mark}}</span></p>
-                    </div>
+                <p id="{{work.id}}"
+                    {% for like in likes %}{% if like.work.id == work.id %}class="like-added"
+                    {% endif %}{% endfor %}><i class="fas fa-heart" {% if user.is_staff %} onclick="like(this)"{% endif %}>***</i> <span class="mark">{{work.mark}}</span></p>
+            </div>
         </div>
     </div>
 </div>

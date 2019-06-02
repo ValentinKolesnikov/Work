@@ -29,7 +29,6 @@ def work(request, id=None):
         try:
             work = Work.objects.get(id=id)
             args = {'work':work}
-            args['csrf_token'] = csrf.get_token(request)
             args['likes'] = Like.objects.filter(user = request.user.id)
             return render(request,'work/work.html', args)
         except:
@@ -59,6 +58,8 @@ def create(request):
             else:
                 work.user = User.objects.get(id=3)
                 work.fio = post.get('fio','')
+            if request.FILES['document']:
+                work.document = request.FILES['document']
             work.save()
             photo.name = str(Work.objects.latest('id').id)+'.jpg'
             work.photo = photo
