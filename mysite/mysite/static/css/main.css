@@ -148,4 +148,8 @@ ul {
   -webkit-transition: 0.2s ease all;
   transition: 0.2s ease all;
 }
+
+.like-added {
+  color: red !important;
+}
 /*# sourceMappingURL=main.css.map */

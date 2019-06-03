@@ -1,0 +1,35 @@
+.art-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 30px;
+}
+
+.art-page__image {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 400px;
+  height: 500px;
+}
+
+.art-page__descr {
+  margin-left: 30px;
+  color: #fff;
+}
+
+.art-page__text {
+  width: 80%;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.art-page__name {
+  font-size: 3rem;
+}
+
+.art-page__rating {
+  position: absolute;
+  top: 0;
+  right: 20%;
+  color: #fff;
+}
+/*# sourceMappingURL=art-page.css.map */

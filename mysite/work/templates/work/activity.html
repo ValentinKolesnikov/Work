@@ -14,14 +14,30 @@
         <div class="art-card__descr">
           <a href="/work/{{work.id}}" class="art-card__name">{{work.name}}</a>
           <p class="art-card__text">{{work.text}}</p>
-          <div class="rest-card__rating">
-            <p id="{{work.id}}" {% for like in likes %}{% if like.work.id == work.id %}class="like-added"
-              {% endif %}{% endfor %}><i class="fas fa-heart" {% if user.is_staff %} onclick="like(this)"
-                {% endif %}></i> <span class="mark">{{work.mark}}</span></p>
+          <div class="art-card__rating">
+            <p id="{{work.id}}" {% for like in likes %}{% if like.work.id == work.id %} class="like-added"
+              {% endif %}{% endfor %}><i class="fas fa-heart" onclick="like(this)"
+                ></i> <span class="mark">{{work.mark}}</span></p>
           </div>
         </div>
       </div>
     {% endfor %}
+      <div class="pagination">
+        {% if list.has_previous %}
+        <a class="pagination__prev-page" href="?page={{ list.previous_page_number }}">Предыдущая</a>
+        {% else %}
+        <a style="visibility: hidden" class="pagination__prev-page" href="">Предыдущая</a>
+        {% endif %}
+      
+        <span class="pagination__current">{{ list.number }} из {{ list.paginator.num_pages }}</span>
+      
+        {% if list.has_next %}
+        <a class="pagination__next-page" href="?page={{ list.next_page_number }}">Следующая</a>
+        {% else %}
+        <a style="visibility: hidden" class="pagination__next-page" href="">Следующая</a>
+        {% endif %}
+      </div>
+      
   </section>
 
 <!-- {% for work in list %}
@@ -44,19 +60,5 @@
 </div>
 {% endfor %}
 -->
- <div class="pagination" >
-    {% if list.has_previous %}
-        <a class="pagination__prev-page" href="?page={{ list.previous_page_number }}">Предыдущая</a>
-    {% else %}    
-        <a style="visibility: hidden" class="pagination__prev-page" href="">Предыдущая</a>
-    {% endif %}
 
-    <span class="pagination__current">{{ list.number }} из {{ list.paginator.num_pages }}</span>
-
-    {% if list.has_next %}
-        <a class="pagination__next-page" href="?page={{ list.next_page_number }}">Следующая</a>
-    {% else %}
-        <a style="visibility: hidden" class="pagination__next-page" href="">Следующая</a>
-    {% endif %}
-</div>
 {% endblock %}

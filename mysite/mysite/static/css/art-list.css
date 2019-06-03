@@ -1,4 +1,5 @@
 .art-list {
+  margin-bottom: 60px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -52,6 +53,16 @@
   transition: 0.3s ease all;
 }
 
+.art-card__rating p {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: 2rem;
+  color: #fff;
+}
+
 .art-card__name {
   display: block;
   font-size: 2.5rem;
@@ -66,5 +77,15 @@
   height: 100px;
   overflow: hidden;
   width: 235px;
+}
+
+.pagination {
+  position: absolute;
+  left: 50%;
+  bottom: -90px;
+  color: #fff;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: 1.8rem;
 }
 /*# sourceMappingURL=art-list.css.map */

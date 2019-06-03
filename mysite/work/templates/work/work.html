@@ -8,7 +8,30 @@
 {% if error %}
 <p>Такого мероприятия нет</p>
 {% else %}
-<div class="outer-block events-block">
+
+<section class="art-page width-limit">
+    <img src="{{work.photo.url}}" alt="{{work.name}}" class="art-page__image">
+    
+    <div class="art-page__descr">
+        <h1 class="art-page__name">{{work.name}}
+            <div class="art-page__rating">
+                <p id="{{work.id}}" {% for like in likes %}{% if like.work.id == work.id %}class="like-added" {% endif %}{% endfor %}><i class="fas fa-heart"  onclick="like(this)" ></i> <span class="mark">{{work.mark}}</span></p>
+            </div>
+        </h1>
+        <p class="art-page__text">{{work.text}}</p>
+        {% if work.extension == "video" %}
+        <video controls name="media">
+            <source src="{{work.document.url}}" type="video/webm"></video>
+        {% elif work.extension == "audio" %}
+        <audio controls src="{{work.document.url}}"></audio>
+        {% elif work.extension != "none"%}
+        <p><a href="{{work.document.url}}" target="_blank">Просмотр работы</a></p>
+        {% endif %}
+    </div>
+
+</section>
+
+<!-- <div class="outer-block events-block">
     <div class="container">
         <div class="event">
             <h1>{{work.name}}</h1>
@@ -28,6 +51,6 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 {% endif %}
 {% endblock %}
