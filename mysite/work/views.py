@@ -9,7 +9,7 @@ from .models import Work, Like
 def activity(request):
     object_list = Work.objects.all()
     object_list = object_list.order_by("-mark")
-    paginator = Paginator(object_list, 6)
+    paginator = Paginator(object_list, 8)
     page = request.GET.get('page')
     try:
         queryset = paginator.page(page)

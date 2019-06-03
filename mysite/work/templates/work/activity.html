@@ -4,7 +4,27 @@
 {% endblock %}
 
 {% block content %}
-{% for work in list %}
+
+  <section class="art-list">
+    {% for work in list %}
+
+      <div class="art-list__card art-card">
+        <div class="art-card__mask"></div>
+        <img src="{{work.photo.url}}" alt="{{work.name}}" class="art-card__photo">
+        <div class="art-card__descr">
+          <a href="/work/{{work.id}}" class="art-card__name">{{work.name}}</a>
+          <p class="art-card__text">{{work.text}}</p>
+          <div class="rest-card__rating">
+            <p id="{{work.id}}" {% for like in likes %}{% if like.work.id == work.id %}class="like-added"
+              {% endif %}{% endfor %}><i class="fas fa-heart" {% if user.is_staff %} onclick="like(this)"
+                {% endif %}></i> <span class="mark">{{work.mark}}</span></p>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </section>
+
+<!-- {% for work in list %}
 <div class="users-block">
   <div class="user">
   <div class="photo"><img src="{{work.photo.url}}" alt="{{work.name}}"></div>
@@ -23,8 +43,8 @@
   </div>
 </div>
 {% endfor %}
-
-<div class="pagination" >
+-->
+ <div class="pagination" >
     {% if list.has_previous %}
         <a class="pagination__prev-page" href="?page={{ list.previous_page_number }}">Предыдущая</a>
     {% else %}    

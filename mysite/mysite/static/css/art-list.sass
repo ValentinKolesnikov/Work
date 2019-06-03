@@ -1,0 +1,50 @@
+@import variables
+.art-list
+	display: flex
+	flex-wrap: wrap
+	justify-content: center
+.art-card
+	position: relative
+	width: 250px
+	margin: 10px
+	height: 300px
+	cursor: pointer
+	&:hover &__descr, &:hover &__mask
+		opacity: 1
+		transition: 0.3s ease all
+
+	&__photo
+		object-fit: cover
+		width: 100%
+		height: 300px
+	&__mask
+		opacity: 0
+		width: 100%
+		height: 100%
+		background-color: rgba(0,0,0,0.9)
+		position: absolute
+		transition: 0.3s ease all
+
+	&__descr
+		width: 250px
+		opacity: 0
+		position: absolute
+		top: 25%
+		left: 50%
+		transform: translateX(-50%)
+		transition: 0.3s ease all
+		
+
+	&__name
+		display: block
+		font-size: 2.5rem
+		text-align: center
+		margin: 10px auto
+	&__text
+		margin: 0 auto
+		text-align: center
+		color: rgba($light, 0.5)
+		height: 100px
+		overflow: hidden
+		width: 235px
+		

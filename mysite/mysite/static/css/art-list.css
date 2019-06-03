@@ -1,0 +1,70 @@
+.art-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.art-card {
+  position: relative;
+  width: 250px;
+  margin: 10px;
+  height: 300px;
+  cursor: pointer;
+}
+
+.art-card:hover .art-card__descr, .art-card:hover .art-card__mask {
+  opacity: 1;
+  -webkit-transition: 0.3s ease all;
+  transition: 0.3s ease all;
+}
+
+.art-card__photo {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 300px;
+}
+
+.art-card__mask {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  position: absolute;
+  -webkit-transition: 0.3s ease all;
+  transition: 0.3s ease all;
+}
+
+.art-card__descr {
+  width: 250px;
+  opacity: 0;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-transition: 0.3s ease all;
+  transition: 0.3s ease all;
+}
+
+.art-card__name {
+  display: block;
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 10px auto;
+}
+
+.art-card__text {
+  margin: 0 auto;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  height: 100px;
+  overflow: hidden;
+  width: 235px;
+}
+/*# sourceMappingURL=art-list.css.map */

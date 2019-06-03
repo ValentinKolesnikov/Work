@@ -1,70 +1,151 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=cyrillic');
-a{cursor: pointer; color:#1976d3; transition: .3s}
-a:hover {color: #1976d3}
-body,html {margin:0;padding: 0;font-family: 'Roboto', sans-serif;font-size: 16px;line-height: 1.428571429;	background: #fff;color: #333; font-weight: 300}
-h2 {width: 100%; text-align: left; font-size: 24px; font-weight: 500; margin:0 0 30px 0; position: relative;}
-* {box-sizing: border-box;}
-.outer-block {float: left;width: 100%; position: relative;}
-.container {max-width: 1024px;margin: 0 auto;width: 100%;}
-.button {background: #fff; color: #1976d3; padding: 7px 50px; border-radius: 30px; font-weight: bold; text-decoration: none}
+html {
+  font-size: 10px;
+}
 
-.header {background: #1976d3; padding: 10px 0}
-.header .logo {float: left; width: 15%;}
-.header .logo img {float: left; width: auto; max-height: 50px;}
-.header nav {float: left; width: calc(80% - 200px)}
-.header nav > ul {list-style: none; margin: 0; padding: 0; display: table;width: 100%}
-.header nav > ul > li {display: table-cell; width: 33.3333333%}
-.header nav > ul > li > a {color: #fff; float: left; width: 100%; text-align: center;line-height: 50px; text-decoration: none; font-size: 16px}
-.header .registration {float: right; margin-top: 8px;}
+body {
+  font-size: 1.4rem;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url("../../media/other/bg.png") center 0 repeat-y;
+  background-size: cover;
+}
 
-.banner-block {height: 450px; overflow: hidden; background: url("/media/other/banner.jpeg") center; background-attachment: fixed; background-size: 100% auto }
-.banner-block {position: relative;}
-.banner-block:before {content: ''; background: rgba(0,0,0,0.5); width: 100%; height: 100%; position: absolute; left: 0; top: 0; z-index: 1}
-.banner-block .content {position: absolute; float: left; text-align: center; width: 100%; color: #fff; top: 100px; left: 50%; transform: translateX(-50%); z-index: 2}
-.banner-block .content h1, .banner-block .content p {float: left; width: 100%; font-size: 50px; font-weight: 400; margin: 0 0 20px 0}
-.banner-block .content .button {float: left; position: relative; left: 50%; transform: translateX(-50%);}
+a {
+  text-decoration: none;
+  color: #fff;
+}
 
-.news-block {padding: 30px 0}
-.news-block .news-left {float: left; width: 65%}
-.news-block .news-left .new {float: left; width: 100%; border: 1px solid #ddd; border-radius: 6px; margin-bottom: 20px; padding: 10px 30px; background: #fff; transition: .3s}
-.news-block .news-left .new:hover {box-shadow: 1px 12px 33px 0 rgba(0,0,0,0.18)}
-.news-block .news-left .new h4 {margin: 5px 0 0; font-size: 24px}
-.news-block .news-left .new p {float: left; width: 100%; margin: 20px 0 0 0;}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-.news-block .new-menu {width: calc(35% - 40px); float: left; margin-left: 40px; padding: 10px 0; background: #1976d3; border-radius: 12px}
-.news-block .new-menu span {float: left; width: 100%; text-align: center; color: #fff; font-size: 20px; padding-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.7);}
-.news-block .new-menu ul {list-style: none; padding: 0; margin: 0; float: left; width: 100%; margin-top: 10px}
-.news-block .new-menu ul li {float: left; width: 100%;}
-.news-block .new-menu ul li a {background: #1976d3; color: #fff; float: left; width: 100%; text-decoration: none; font-size: 18px; padding: 0 20px; line-height: 40px; border-bottom: 1px solid rgba(255,255,255,0.2)}
+.width-limit {
+  width: 90%;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
 
-.users-block {min-height: calc(100vh - 296px);}
-.users-block .user {float: left; width: 100%; padding: 15px 20px; border: 1px solid #ddd; margin: 20px 0;}
-.users-block .photo {float: left; width: 30%}
-.users-block .photo img {float: left; width: 100%}
-.users-block .content {float: left; width: 70%; padding-left: 30px;}
-.users-block .content span {color: #1976d3; font-weight: bold;}
+.logo {
+  font-family: 'Intro';
+  color: #F5C3A8;
+}
 
-.events-block {text-align: center;    min-height: calc(100vh - 296px);}
-.events-block .event {margin: 20px 0; float: left; width: 100%}
-.events-block h1 {float: left; width: 100%; margin-bottom: 0}
-.events-block p {float: left; width: 100%; margin: 10px 0;}
-.events-block .button {background: #1976d3; color: #fff; float: left; position: relative; left: 50%; transform: translateX(-50%); margin-top: 10px}
+.main-header {
+  color: #fff;
+  line-height: 20px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: relative;
+}
 
-.participation-block {text-align: center;    min-height: calc(100vh - 296px);}
-.participation-block .event {float: left; width: 100%; margin: 30px 0}
-.participation-block textarea, .participation-block .input-area {display: block;width: 100%;max-width: 100%;height: 100px;padding: 6px 12px;font-size: 14px;line-height: 1.42857143;color: #555;background-color: #fff;background-image: none;border: 1px solid #ccc;border-radius: 4px;-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);-webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;-o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;}
-.participation-block .input-area {height: 30px; margin-bottom: 20px}
-.participation-block .img-load {float: left; width: 100%; text-align: center; margin: 20px 0}
-.participation-block span {float: left; width: 100%; margin-bottom: 10px}
-.participation-block input {float: left; width: auto; position: relative; left: 50%; transform: translateX(-50%)}
-.participation-block .button {background: #1976d3; color: #fff; float: left; position: relative; left: 50%; transform: translateX(-50%); margin-top: 10px}
+.main-header__body {
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
 
-footer {background: #1976d3; float: left; width: 100%; color: #fff; padding: 20px 0}
-footer .links {float: left; width: 50%; padding: 0 15px}
-footer .links a {color: #fff; text-align: left; text-decoration: none;float: left; width: 100%; font-size: 18px; margin-bottom: 10px}
-footer .links-col {float: left; width: 100%; padding: 0 150px;}
-footer .copyright {float: left; width: 100%}
-footer .copyright a {float: left; width: auto; color: #fff; position: relative; left: 50%; transform: translateX(-50%); margin-top: 20px}
-footer .copyright a img {max-width: 80px; float: left;}
-footer .copyright a p {float: left; width: auto; padding-left: 5px; margin: 24px 0 0 0; font-size: 26px;  font-weight: 300}
+.main-header__navig {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+}
 
+.main-header__show-navig {
+  position: absolute;
+  top: 27%;
+  margin-left: 1.5rem;
+  height: 20px;
+}
+
+.main-header__page-navig {
+  margin-left: 60px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.main-header__page-navig li {
+  margin-right: 20px;
+}
+
+.main-header__auth {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translatey(-50%);
+          transform: translatey(-50%);
+}
+
+.page-navig {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-animation-name: fade;
+          animation-name: fade;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+}
+
+.main-footer {
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 100px;
+}
+
+.main-footer__logo {
+  font-size: 2rem;
+  margin-right: 3rem;
+}
+
+.main-footer__text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main-footer__text div {
+  margin-top: 30px;
+}
+
+.main-footer__text-addition {
+  font-size: 1.4rem;
+  color: #fff;
+}
+
+.content {
+  min-height: 100vh;
+}
+
+.btn {
+  padding: 12px;
+  color: rgba(255, 255, 255, 0.8);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.8);
+  -webkit-transition: 0.2s ease all;
+  transition: 0.2s ease all;
+  cursor: pointer;
+}
+
+.btn:hover {
+  color: #000;
+  border: 2px solid rgba(0, 0, 0, 0.8);
+  background-color: rgba(255, 255, 255, 0.9);
+  -webkit-transition: 0.2s ease all;
+  transition: 0.2s ease all;
+}
+/*# sourceMappingURL=main.css.map */

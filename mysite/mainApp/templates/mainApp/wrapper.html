@@ -9,60 +9,47 @@
 	{%  load staticfiles %}
 
 	<link rel="stylesheet" href="{% static 'css/main.css' %}">
+	<link rel="stylesheet" href="{% static 'css/main-page.css' %}">
+	<link rel="stylesheet" href="{% static 'css/art-list.css' %}">
+	<link rel="stylesheet" href="{% static 'fonts/roboto/roboto.css' %}">
+	<link rel="stylesheet" href="{% static 'fonts/intro/intro.css' %}">
+	<link rel="stylesheet" href="{% static 'icons/fontawesome-free-5.8.2-web/css/all.min.css' %}">
 </head>
 
 <body>
-	<div class="outer-block header">
-		<div class="container">
-			<div class="head">
-				<a href="/" class="logo">
-					<img src="/media/other/logo.png" alt="Logo">
-				</a>
-				<nav>
-					<ul>
-						<li>
-							<a href="/activity">Произведения</a>
-						</li>
-						<li>
-							<a href="/work/create">Опубликовать</a>
-						</li>
-						{% if user.is_superuser %}
-						<li>
-							<a href="/admin">Админка</a>
-						</li>
-						{% endif %}
-					{% block auth %}
-						{% include "mainApp/includes/login_panel.html" %}
-					{% endblock %}
+	<header class="main-header">
+		<div class="main-header__body width-limit">
+			<div class="main-header__logo"><a href="/" class="logo">Произведения<br>Искусства</a></div>
+			<nav class="main-header__navig">
+				<a class='main-header__show-navig' href="#"><i class="fas fa-arrow-right"></i></a>
+				<ul class="page-navig main-header__page-navig">
+					<li class="page-navig__item"><a href="/activity">Все произведения</a></li>
+					<li class="page-navig__item"><a href="/work/create">Опубликовать</a></li>
+					{% if user.is_superuser %}
+					<li class="page-navig__item"><a href="/admin">Админка</a></li>
+					{% endif %}
 				</ul>
 			</nav>
-
-			</div>
+			{% block auth %}
+				{% include "mainApp/includes/login_panel.html" %}
+			{% endblock %}
 		</div>
+	</header>
+	<div class="content">
+		{% block content %}
+		{% endblock %}
 	</div>
-	{% block content %}
-	{% endblock %}
-	<footer>
-		<div class="container">
-			<div class="links-col">
-				<div class="links">
-					<a href="#">Помощь</a>
-					<a href="#">О нас</a>
-					<a href="#">Правила сайта</a>
-				</div>
-				<div class="links">
-					<a href="#">Регистрация</a>
-					<a href="#">Пользовательское соглашение</a>
-					<a href="#">Реквизиты</a>
-				</div>
-			</div>
-			<div class="copyright">
-				<a href="/" class="">
-					<img src="/media/other/logo.png" alt="Logo"><p>base.by all rights reserved (c) 2019</p>
-				</a>
+	<footer class="main-footer">
+		<div class="main-footer__body width-limit">
+			<div class="main-footer__text">
+				<div class="main-footer__logo"><a href="/" class="logo">Произведения<br>Искусства</a></div>
+				<div class="main-footer__text-addition">base by all rights reserved (c) 2019</div>
 			</div>
 		</div>
 	</footer>
+
+
+	
 	<script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>

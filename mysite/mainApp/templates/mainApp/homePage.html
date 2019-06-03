@@ -5,33 +5,25 @@
 {% endblock %}
 
 {% block content %}
-<div class="outer-block banner-block">
-    <div class="container">
-        <div class="content">
-            <h1>Регистрация на конкурс‎</h1>
-            <p class="change-competition">{{top.name}}</p>
-            <a class="button" href="work/{{top.id}}">Принять участие</a>
-        </div>
+
+
+<section class="description">
+    <div class="description__mask"></div>
+    <h1 class="description__headline">У вас есть произведения искусства..?<br>Зарегистрируйте их у нас!</h1>
+    <button class="description__register btn"><a href="/work/create">Зарегистрировать</a></button>
+</section>
+
+
+
+<section class="example">
+    <h1 class="example__headline">Примеры произведений</h1>
+    <div class="example__short-list width-limit">
+        <div class="example__card card-1 card"></div>
+        <div class="example__card card-2 card"></div>
+        <div class="example__card card-3 card"></div>
+        <div class="example__card card-4 card"></div>
     </div>
-</div>
-<div class="outer-block news-block">
-    <div class="container">
-        <div class="news-left">
-            {% for new in news %}
-            <div class="new">
-                <h4><a href="work/{{new.id}}">{{new.name}}</a></h4>
-                <p>{{new.text}}</p>
-            </div>
-            {% endfor %}
-        </div>
-        <nav class="new-menu">
-            <span>Обратите внимание</span>
-            <ul>
-                {% for b in bar %}
-                <li><a href="work/{{b.id}}">{{b.name}}</a></li>
-                {% endfor %}
-            </ul>
-        </nav>
-    </div>
-</div>
+</section>
+
+
 {% endblock %}

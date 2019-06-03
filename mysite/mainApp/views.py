@@ -12,3 +12,4 @@ def index(request):
     massiv2 = works[start-4 if start>3 else 0:start]
     
     return render(request, 'mainApp/homePage.html', {'news':massiv1,'bar':massiv2, 'top':topwork})
+

@@ -1,0 +1,115 @@
+@import variables
+html
+	font-size: 10px
+
+body
+	font-size: 1.4rem
+	font-family: 'Roboto', sans-serif
+	margin: 0
+	padding: 0
+	background: url('../../media/other/bg.png') center 0 repeat-y
+	background-size: cover
+
+a
+	text-decoration: none
+	color: $light
+ul
+	list-style: none
+	padding: 0
+	margin: 0
+
+.width-limit
+	width: 90%
+	position: absolute
+	left: 50%
+	transform: translateX(-50%)
+
+.logo
+	font-family: 'Intro'
+	color: $first
+
+.main-header
+	color: $light
+	line-height: 20px
+	height: 40px
+	background-color: rgba($dark, 0.7)
+	position: relative
+	&__body
+		height: 40px
+		display: flex
+	&__navig
+		display: flex
+		overflow: hidden
+	&__show-navig
+		position: absolute
+		top: 27%
+		margin-left: 1.5rem
+		height: 20px
+	&__page-navig
+		margin-left: 60px
+		position: absolute
+		top: 50%
+		transform: translateY(-50%)
+		li
+			margin-right: 20px
+	&__auth
+		position: absolute
+		right: 0
+		top: 50%
+		transform: translatey(-50%)
+.page-navig
+	position: absolute
+	display: flex
+	animation-name: fade
+	animation-duration: 5s
+	&__item a
+
+
+
+
+.main-footer
+	background-color: rgba($dark, 0.7)
+	height: 100px
+	&__logo
+		font-size: 2rem
+		margin-right: 3rem
+	&__text
+		div
+			margin-top: 30px
+		display: flex
+		align-items: center
+		justify-content: center
+		&-addition
+			font-size: 1.4rem
+			color: $light
+
+
+
+.content
+	min-height: 100vh
+
+.btn
+	padding: 12px
+	color: rgba($light, 0.8)
+	border: 2px solid rgba($light, 0.8)
+	border-radius: 30px
+	background-color: rgba($dark, 0.8)
+	transition: 0.2s ease all
+	cursor: pointer
+	&:hover
+		color: $dark
+		border: 2px solid rgba($dark, 0.8)
+		background-color: rgba($light, 0.9)
+		transition: 0.2s ease all
+
+
+
+
+
+// @keyframes fade
+// 	from
+// 		opacity: 0
+
+// 	to
+// 		opacity: 1
+
