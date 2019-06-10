@@ -7,7 +7,7 @@ function like(btn){
     var mark = Number(parent.lastChild.innerHTML);
     var name = document.getElementById('user');
     if(name){
-        console.log('fds');
+      console.log(parent.getAttribute('id'));
       if (parent.getAttribute('class') == 'like-added'){
         parent.removeAttribute('class');
         mark--;

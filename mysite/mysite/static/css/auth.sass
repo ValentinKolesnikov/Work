@@ -1,0 +1,32 @@
+@import variables
+
+.box
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -50%)
+	form
+		display: flex
+		flex-direction: column
+
+
+.auth
+	&__title
+		text-align: center
+		color: $light
+	&__input
+		padding: 5px 7px
+		margin-top: 7px
+	&__btn
+		background-color: rgba($dark, 0.8)
+		color: $light
+		border: 1px solid $light
+		padding: 5px 7px
+		width: 50%
+		margin: 10px auto
+		text-transform: uppercase
+	&__reg
+		position: absolute
+		bottom: -17px
+		left: 50%
+		transform: translateX(-50%)

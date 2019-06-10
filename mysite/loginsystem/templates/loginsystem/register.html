@@ -5,9 +5,9 @@
 {% endblock %}
 
 {% block content %}
-	<div class="register">
+	<div class="box">
 		<div class="register-box">
-			<h1>Регистрация</h1>
+			<h1 class="auth__title">Регистрация</h1>
 			<form action="/auth/register/" method="POST">
 				{% csrf_token %}
 				{{ form.as_p }}

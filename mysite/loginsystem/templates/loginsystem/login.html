@@ -6,32 +6,23 @@
 
 {% block content %}
     
-    <div class="login-form auth-error">
+  
 
-        <div class="materialContainer">
+       
             <div class="box">
-                <div class="title">ВХОД</div>
+                <h1 class="auth__title">ВХОД</h1>
                 <form action="/auth/login/" method="POST">
-                    {% csrf_token %}
-                    <div class="input">
-                        <label for="username"></label>
-                        <input type="text" name="username" id="username">
-                    </div>
-
-                    <div class="input">
-                        <label for="password"></label>
-                        <input type="password" name="password" id="password">
-                    </div>
-
-                    <div class="button login">
-                        <button type="submit"><span>Войти</span> <i class="fa fa-check"></i></button>
-                    </div>
+                    {% csrf_token %} 
+                        <input class="auth__input" type="text" name="username" id="username">
+                        <input class="auth__input" type="password" name="password" id="password">
+                        <button class="auth__btn" type="submit">Войти</button>
                     {% if login_error %}
                     <p class="error">{{ login_error }}</p>
                     {% endif %}
+                    <a href="/auth/register/" class="auth__reg">Регистрация</a>
                 </form>
-                <a href="/auth/register/" class="pass-forgot">Регистрация</a>
+                
             </div>
-        </div>
-    </div>
+
+
 {% endblock %}
